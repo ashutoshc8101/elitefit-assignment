@@ -56,4 +56,19 @@
     margin: 15px;
     cursor: pointer;
   }
+
+  @media screen and (max-width: 768px) {
+      .piston-logo {
+        font-size: 32px;
+      }
+
+      .stay-connected {
+        font-size: 16px;
+      }
+
+      .social-icons img {
+        width: 24px;
+        height: 24px;
+      }
+    }
 </style>

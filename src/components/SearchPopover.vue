@@ -1,5 +1,6 @@
 <script lang="ts">
   export default {
+    props: ['popoverIsShown'],
     methods: {
       closePopover() {
         this.$emit('onClosePopover');
@@ -9,7 +10,7 @@
 </script>
 
 <template>
-  <div class="search-popover active">
+  <div class="search-popover" :class="{ hidden: !popoverIsShown }">
     <div class="search-header">
       <img src="../assets/icons/Close.png" @click="closePopover()" />
     </div>
@@ -22,30 +23,32 @@
 
 <style scoped>
   .search-popover {
-    width: 436px;
+    max-width: 436px;
+    width: 100%;
     background-color: #FFF;
     padding: 8px;
     display: inline-block;
-    position: absolute;
-    right: 0;
+    position: fixed;
+    right: 0px;
     top: 140px;
-    z-index: 100000;
-    display: none;
+    z-index: 1000000000;
+    transition: right 0.3s;
   }
 
-  .search-popover.active {
-    display: block;
+  .search-popover.hidden {
+    right: -450px;
   }
 
   .search-popover .search-input {
     margin: 5px 0px;
     height: 33px;
-    width: 226px;
     border-radius: 50px;
     border: 1px solid #000;
     background: #FFF;
     outline: none;
     padding: 0px 10px;
+    flex-grow: 1;
+    margin-right: 10px;
   }
 
   .search-button {
@@ -81,5 +84,17 @@
     margin-bottom: 21px;
     display: flex;
     justify-content: space-between;
+  }
+
+  @media screen and (max-width: 768px) {
+    .search-popover {
+      right: 0px;
+      top: 105px;
+      transition: top 0.3s;
+    }
+
+    .search-popover.hidden {
+      top: -110px;
+    }
   }
 </style>

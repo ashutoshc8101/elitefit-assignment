@@ -32,7 +32,7 @@
     <div class="testimonial-list">
       <div class="container">
         <div class="row testimonial-row">
-          <div v-for="(testimonial, index) in testimonials" :key="index" class="col-sm-3">
+          <div v-for="(testimonial, index) in testimonials" :key="index" class="testimonial-container col-lg-3">
             <div class="testimonial">
               <img :src="testimonial['image']" alt="alex-p" />
               <div class="testimonial-author">{{ testimonial['name'] }}</div>
@@ -67,10 +67,6 @@
     margin-top: 109px;
   }
 
-  .row.testimonial-row {
-    flex-grow: 1 1 1 1;
-  }
-
   .testimonial {
     position: relative;
     height: 277px;
@@ -94,9 +90,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
     color: #FFF;
-
     text-align: center;
     font-size: 36px;
     font-style: normal;
@@ -127,5 +121,34 @@
   .testimonial .text-overlay:hover {
     opacity: 1;
     transition: opacity 0.2s;
+  }
+
+  @media screen and (max-width: 922px) {
+
+    .testimonial-list {
+      margin-top: 20px;
+    }
+
+    .testimonials {
+      padding: 20px;
+    }
+
+    .testimonial-container {
+      margin: 25px 0px;
+      padding: 0px;
+    }
+
+
+    .testimonials-heading {
+      font-size: 24px;
+    }
+
+    .testimonial .testimonial-author {
+      font-size: 24px;
+    }
+
+    .text-overlay {
+      font-size: 14px;
+    }
   }
 </style>
