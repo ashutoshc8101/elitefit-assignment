@@ -21,7 +21,9 @@
 
   <GridTiles />
   <AboutPistons />
-  <Testimonials />
+  <Suspense>
+    <Testimonials />
+  </Suspense>
   <Footer />
 </template>
 
