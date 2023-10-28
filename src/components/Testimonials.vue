@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { ref } from "vue";
+import { ref } from "vue";
 
   const testimonials = ref([]);
 
@@ -7,7 +7,7 @@
     // https://elitefit4you.com/test-api/testimonials.json is not
     // fetchable by javascript client as CORS is not enabled for this endpoint.
     // Hence, testimonials.json is self hosted and fetched.
-    const response = await fetch('/testimonials.json');
+    const response = await fetch('/elitefit-assignment/testimonials.json');
 
     testimonials.value = Object.freeze(await response.json());
   } catch (e) {
