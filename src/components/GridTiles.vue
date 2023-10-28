@@ -120,7 +120,6 @@
 <style scoped>
   .pistons-content {
     padding: 0px;
-    /* padding-top: 140px; */
   }
 
   .grid-item {
@@ -344,6 +343,16 @@
     display: none;
   }
 
+  .row-1 {
+    margin-top: 139px;
+  }
+
+  .row-1, .row-2, .row-3, .row-4 {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+  }
+
   @media screen and (max-width: 768px) {
     .grid-item .grid-item-content.shop-grid-item {
       margin-top: 2%;
@@ -401,6 +410,10 @@
 
     .grid-item-text.pistons-logo {
       top: -40px;
+    }
+
+    .row-1 {
+      margin-top: 50px;
     }
   }
 </style>
